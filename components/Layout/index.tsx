@@ -49,7 +49,9 @@ const [House, Fitness, Note, Mental] = [HouseIcon, FitnessIcon, NoteIcon, Mental
 
 const NavBar = ({ children }: ILayout) => {
   const [scrolled] = useScrolled();
+
   const navProps = scrolled ? { $variant: "secondary" } : {};
+
   return (
     <Nav {...navProps}>
       <Ul role="list">

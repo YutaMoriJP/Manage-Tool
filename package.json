@@ -2,7 +2,13 @@
   "scripts": {
     "dev": "npx yarn next dev",
     "build": "yarn next build",
-    "start": "yarn next start"
+    "start": "yarn next start",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check .",
+    "lint": "npx eslint . --ext ts --ext tsx --ext js",
+    "types": "tsc --pretty --noEmit",
+    "prepare": "husky install",
+    "all": "npm run format && npm run lint && npm run types"
   },
   "dependencies": {
     "@radix-ui/react-switch": "^0.1.3",
@@ -23,6 +29,16 @@
   "devDependencies": {
     "@types/react": "17.0.31",
     "@types/styled-components": "^5.1.17",
-    "typescript": "4.4.4"
+    "husky": "^7.0.0",
+    "typescript": "4.4.4",
+    "babel-plugin-styled-components": "^1.13.2",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.29.4",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "prettier": "^2.6.2"
   }
 }

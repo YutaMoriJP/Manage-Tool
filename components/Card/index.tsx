@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import type { ReactNode } from "react";
 
-interface ICard extends React.ComponentProps<"div"> {
+interface ICard extends Omit<React.ComponentProps<"div">, "ref"> {
   children: ReactNode;
   onClick: () => void;
 }
@@ -31,6 +31,10 @@ export const StyledHeader = styled.h1`
   text-align: center;
 `;
 
-const Card = ({ children, onClick }: ICard) => <StyledContainer onClick={onClick}>{children}</StyledContainer>;
+const Card = ({ children, onClick, ...rest }: ICard) => (
+  <StyledContainer onClick={onClick} {...rest}>
+    {children}
+  </StyledContainer>
+);
 
 export default Card;

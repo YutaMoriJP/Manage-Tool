@@ -5,6 +5,7 @@ import Container from "../styled/Center";
 import { useRouter } from "next/router";
 import { MdOutlineFitnessCenter as FitnessIcon, MdOutlineNoteAdd as NoteIcon } from "react-icons/md";
 import { RiMentalHealthLine as MentalIcon } from "react-icons/ri";
+import useKeyPressRoute from "../hooks/useKeyPressRoute";
 
 const [Mental, Fitness, Note] = [MentalIcon, FitnessIcon, NoteIcon].map(
   (icon) =>
@@ -25,32 +26,31 @@ const containerBaseStyle = css`
   }
 `;
 
+const HOME_ITEMS = [
+  { text: "mental", headers: "MENTAL HEALTH", Page: Mental },
+  { text: "fitness", headers: "FITNESS", Page: Fitness },
+  { text: "note", headers: "NOTE", Page: Note }
+];
+
 const Home = () => {
   const { push } = useRouter();
+
+  const handleKeyPress = useKeyPressRoute();
 
   return (
     <>
       <Head>
         <title>HOME</title>
       </Head>
+
       <Container $direction="row" $baseStyle={containerBaseStyle}>
-        <Card onClick={() => push("/mental")}>
-          <Mental />
+        {HOME_ITEMS.map(({ text, ...Item }) => (
+          <Card key={text} onClick={() => push(`/${text}`)} onKeyDown={(e) => handleKeyPress(e, text)} tabIndex={0}>
+            <Item.Page />
 
-          <CardHeader>MENTAL HEALTH</CardHeader>
-        </Card>
-
-        <Card onClick={() => push("/fitness")}>
-          <Fitness />
-
-          <CardHeader>FITNESS</CardHeader>
-        </Card>
-
-        <Card onClick={() => push("/todo")}>
-          <Note />
-
-          <CardHeader>NOTE</CardHeader>
-        </Card>
+            <CardHeader>{text}</CardHeader>
+          </Card>
+        ))}
       </Container>
     </>
   );

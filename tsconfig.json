@@ -7,7 +7,9 @@
       "@/util/*": ["util/*"],
       "@/styles/*": ["styles/*"],
       "@/store/*": ["store/*"],
-      "@/typings/*": ["typings/*"]
+      "@/typings/*": ["typings/*"],
+      "@/features/*": ["features/*"],
+      "@/app/*": ["app/*"]
     },
     "allowJs": true,
     "allowUnreachableCode": false,
@@ -28,7 +30,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2018"
+    "target": "es2018",
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

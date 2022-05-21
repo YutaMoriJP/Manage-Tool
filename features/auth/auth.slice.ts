@@ -27,7 +27,7 @@ const authSlice = createSlice({
   }
 });
 
-//dispatchers
+// Dispatchers
 export const { authenticate, toggle, updateTo } = authSlice.actions;
 
 export default authSlice.reducer;

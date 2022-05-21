@@ -1,12 +1,11 @@
 import Head from "next/head";
 
-export default function () {
+export default function Mental() {
   return (
     <>
       <Head>
-        <title>Mental - Management</title>
+        <title>Mental</title>
       </Head>
-      <div>MENTAL HEALTH</div>
     </>
   );
 }

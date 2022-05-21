@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export type Item = { value: string; text: string };
+
 export type SelectProps = { label: string; items: Item[]; value: string } & React.ComponentProps<"select">;
 
 const Label = styled.label`

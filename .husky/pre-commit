@@ -1,0 +1,30 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️👷 Running all scripts to check if standards are met...'
+
+# Check Prettier standards
+npm run format ||
+(
+    echo 'Bad format - run prettier';
+    false;
+)
+
+# Check ESLint Standards
+npm run lint ||
+(
+        echo 'ESLint check failed.'
+        false; 
+)
+
+# Check tsconfig standards
+npm run types ||
+(
+    echo 'Failed Type check.'
+    false;
+)
+
+echo 'Typings looks good'
+
+#  Now we can commit
+echo '✅✅✅ Looks good'

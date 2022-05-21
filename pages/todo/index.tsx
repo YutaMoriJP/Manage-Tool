@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-export default function () {
+export default function Todo() {
   return (
     <>
       <Head>
-        <title>Todo - Management</title>
+        <title>Todo</title>
       </Head>
-      <div>TODO</div>{" "}
+      <div>TODO</div>
     </>
   );
 }

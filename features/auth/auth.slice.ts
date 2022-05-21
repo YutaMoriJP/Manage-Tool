@@ -5,22 +5,24 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  isAuthenticated: false
+  isAuthenticated: true
 };
 
-//slice represents state and logic of state
+// Slice represents state and logic of state
 const authSlice = createSlice({
   name: "authentication",
   initialState,
   reducers: {
-    authenticate(state) {
-      state.isAuthenticated = true;
+    authenticate(state, action: PayloadAction<boolean>) {
+      state.isAuthenticated = action.payload;
     },
+
     toggle(state) {
       !state.isAuthenticated;
     },
-    updateTo(state, { payload }: PayloadAction<boolean>) {
-      state.isAuthenticated = payload;
+
+    updateTo(state, action: PayloadAction<boolean>) {
+      state.isAuthenticated = action.payload;
     }
   }
 });

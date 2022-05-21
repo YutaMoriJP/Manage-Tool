@@ -11,11 +11,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root)`
   height: 25px;
   background-color: #364fc7;
   border-radius: 9999px;
-  position: relative;
   cursor: pointer;
-  position: fixed;
-  right: 10px;
-  top: 10px;
   &:focus {
     box-shadow: 0 0 0 2px #8b94c0;
   }

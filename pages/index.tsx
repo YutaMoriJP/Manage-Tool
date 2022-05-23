@@ -5,7 +5,8 @@ import Container from "../styled/Center";
 import { useRouter } from "next/router";
 import { MdOutlineFitnessCenter as FitnessIcon, MdOutlineNoteAdd as NoteIcon } from "react-icons/md";
 import { RiMentalHealthLine as MentalIcon } from "react-icons/ri";
-import useKeyPressRoute from "../hooks/useKeyPressRoute";
+import useKeyPressRoute from "@/hooks/useKeyPressRoute";
+import useGetGenerals, { useGetGeneral } from "@/hooks/queries/useGetGenerals";
 
 const [Mental, Fitness, Note] = [MentalIcon, FitnessIcon, NoteIcon].map(
   (icon) =>
@@ -36,6 +37,11 @@ const Home = () => {
   const { push } = useRouter();
 
   const handleKeyPress = useKeyPressRoute();
+
+  const idAll = useGetGeneral("1");
+  const all = useGetGenerals();
+
+  [idAll, all].forEach(console.log);
 
   return (
     <>

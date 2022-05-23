@@ -4,12 +4,14 @@
     "paths": {
       "@/hooks/*": ["hooks/*"],
       "@/components/*": ["components/*"],
-      "@/util/*": ["util/*"],
+      "@/utils/*": ["utils/*"],
       "@/styles/*": ["styles/*"],
       "@/store/*": ["store/*"],
       "@/typings/*": ["typings/*"],
       "@/features/*": ["features/*"],
-      "@/app/*": ["app/*"]
+      "@/app/*": ["app/*"],
+      "@/server/*": ["server/*"],
+      "@/data/*": ["data/*"]
     },
     "allowJs": true,
     "allowUnreachableCode": false,

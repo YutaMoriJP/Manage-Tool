@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-import Select from "../../components/Select";
+import Select from "../../src/components/Select";
 import { MONTHS } from "../../data/date";
 
 const monthItems = MONTHS.map((month) => ({ value: month, text: month }));

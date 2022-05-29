@@ -6,6 +6,7 @@ export type SelectProps = { label: string; items: Item[]; value: string } & Reac
 
 const Label = styled.label`
   padding: var(--xm);
+
   span:first-child {
     padding-right: var(--sm);
   }

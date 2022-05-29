@@ -3,11 +3,15 @@
     "baseUrl": ".",
     "paths": {
       "@/hooks/*": ["hooks/*"],
-      "@/components/*": ["components/*"],
-      "@/util/*": ["util/*"],
+      "@/components/*": ["src/components/*"],
+      "@/utils/*": ["utils/*"],
       "@/styles/*": ["styles/*"],
       "@/store/*": ["store/*"],
-      "@/typings/*": ["typings/*"]
+      "@/typings/*": ["typings/*"],
+      "@/features/*": ["src/features/*"],
+      "@/app/*": ["reduxApp/*"],
+      "@/server/*": ["server/*"],
+      "@/data/*": ["data/*"]
     },
     "allowJs": true,
     "allowUnreachableCode": false,
@@ -28,7 +32,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2018"
+    "target": "es2018",
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

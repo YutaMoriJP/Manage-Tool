@@ -2,9 +2,9 @@ import * as React from "react";
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import store from "../app/store";
-import Authenticate from "../components/Authenticate";
+import Authenticate from "../src/features/Authenticate";
 import Global from "../styled/Global";
-import Layout from "../components/Layout";
+import Layout from "../src/components/Layout";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 

@@ -1,4 +1,4 @@
-import Theme from "../Theme";
+import Theme from "../../features/Theme";
 import Link from "next/link";
 import styled from "styled-components";
 import {
@@ -7,9 +7,10 @@ import {
   MdHouse as HouseIcon
 } from "react-icons/md";
 import { RiMentalHealthLine as MentalIcon } from "react-icons/ri";
-import IconButton from "../../styled/IconButton";
+import IconButton from "../../../styled/IconButton";
 import { Tooltip } from "kantan-components";
 import { useScrolled } from "kantan-hooks";
+import useKeyPressRoute from "../../../hooks/useKeyPressRoute";
 
 interface ILayout {
   children: React.ReactNode;
@@ -47,51 +48,36 @@ const [House, Fitness, Note, Mental] = [HouseIcon, FitnessIcon, NoteIcon, Mental
     `
 );
 
+const NAV_ITEM = [
+  { text: "HOME", id: "home-icon", label: "Home Icon", href: "/", Icon: House },
+  { text: "FITNESS", id: "fitness-icon", label: "Fitness Icon", href: "/fitness", Icon: Fitness },
+  { text: "NOTE", id: "note-icon", label: "Note Icon", href: "/note", Icon: Note },
+  { text: "MENTAL", id: "mental-icon", label: "Mental Icon", href: "/mental", Icon: Mental }
+];
+
 const NavBar = ({ children }: ILayout) => {
   const [scrolled] = useScrolled();
 
   const navProps = scrolled ? { $variant: "secondary" } : {};
 
+  const handleKeyPress = useKeyPressRoute();
+
   return (
     <Nav {...navProps}>
       <Ul role="list">
-        <Link href="/">
-          <Li>
-            <Tooltip text="HOME" describedBy="home-icon">
-              <IconButton>
-                <House aria-label="Home Icon" id="home-icon" />
-              </IconButton>
-            </Tooltip>
-          </Li>
-        </Link>
-        <Link href="/fitness">
-          <Li>
-            <Tooltip text="FITNESS" describedBy="fitness-icon">
-              <IconButton>
-                <Fitness aria-label="Fitness Icon" id="fitness-icon" />
-              </IconButton>
-            </Tooltip>
-          </Li>
-        </Link>
-        <Link href="/todo">
-          <Li>
-            <Tooltip text="NOTE" describedBy="note-icon">
-              <IconButton>
-                <Note aria-label="Note Icon" id="note-icon" />
-              </IconButton>
-            </Tooltip>
-          </Li>
-        </Link>
-        <Link href="/mental">
-          <Li>
-            <Tooltip text="MENTAL HEALTH" describedBy="mental-icon">
-              <IconButton>
-                <Mental aria-label="Mental Health Icon" id="note-icon" />
-              </IconButton>
-            </Tooltip>
-          </Li>
-        </Link>
+        {NAV_ITEM.map((Item) => (
+          <Link href={Item.href} key={Item.href}>
+            <Li tabIndex={0} onKeyDown={(e) => handleKeyPress(e, Item.href)}>
+              <Tooltip text={Item.text} describedBy={Item.id}>
+                <IconButton>
+                  <Item.Icon aria-label={Item.label} id={Item.id} />
+                </IconButton>
+              </Tooltip>
+            </Li>
+          </Link>
+        ))}
       </Ul>
+
       {children}
     </Nav>
   );
@@ -103,6 +89,7 @@ const Layout = ({ children }: ILayout) => {
       <NavBar>
         <Theme />
       </NavBar>
+
       <Main>{children}</Main>
     </>
   );

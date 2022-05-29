@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled, { css } from "styled-components";
-import Card, { StyledHeader as CardHeader } from "../components/Card";
+import Card, { StyledHeader as CardHeader } from "../src/components/Card";
 import Container from "../styled/Center";
 import { useRouter } from "next/router";
 import { MdOutlineFitnessCenter as FitnessIcon, MdOutlineNoteAdd as NoteIcon } from "react-icons/md";

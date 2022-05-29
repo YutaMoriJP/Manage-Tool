@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from "../../app/hooks";
-import { authenticate } from "../../features/auth/auth.slice";
+import { useDispatch, useSelector } from "../../../reduxApp/hooks";
+import { authenticate } from "../../../features/auth/auth.slice";
 import styled, { css } from "styled-components";
-import Button from "../../styled/StyledButton";
-import Container from "../../styled/Center";
+import Button from "../../../styled/StyledButton";
+import Container from "../../../styled/Center";
 import Head from "next/head";
 import { useFormik } from "formik";
-import Alert from "../../styled/Alert";
+import Alert from "../../../styled/Alert";
 
 type AuthenticateProps = { children: React.ReactNode };
 type FormValues = { userName: string; password: string };

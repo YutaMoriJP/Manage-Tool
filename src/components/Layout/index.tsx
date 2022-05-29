@@ -1,4 +1,4 @@
-import Theme from "../Theme";
+import Theme from "../../features/Theme";
 import Link from "next/link";
 import styled from "styled-components";
 import {
@@ -7,10 +7,10 @@ import {
   MdHouse as HouseIcon
 } from "react-icons/md";
 import { RiMentalHealthLine as MentalIcon } from "react-icons/ri";
-import IconButton from "../../styled/IconButton";
+import IconButton from "../../../styled/IconButton";
 import { Tooltip } from "kantan-components";
 import { useScrolled } from "kantan-hooks";
-import useKeyPressRoute from "../../hooks/useKeyPressRoute";
+import useKeyPressRoute from "../../../hooks/useKeyPressRoute";
 
 interface ILayout {
   children: React.ReactNode;

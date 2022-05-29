@@ -3,13 +3,13 @@
     "baseUrl": ".",
     "paths": {
       "@/hooks/*": ["hooks/*"],
-      "@/components/*": ["components/*"],
+      "@/components/*": ["src/components/*"],
       "@/utils/*": ["utils/*"],
       "@/styles/*": ["styles/*"],
       "@/store/*": ["store/*"],
       "@/typings/*": ["typings/*"],
-      "@/features/*": ["features/*"],
-      "@/app/*": ["app/*"],
+      "@/features/*": ["src/features/*res/*"],
+      "@/app/*": ["reduxApp/*"],
       "@/server/*": ["server/*"],
       "@/data/*": ["data/*"]
     },

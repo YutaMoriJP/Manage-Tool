@@ -14,7 +14,7 @@ class MiddleWare {
   }
 
   parseUrlEncoded() {
-    this.express.use(express.urlEncoded({ extended: true }));
+    this.express.use(express.urlencoded({ extended: true }));
   }
 
   init() {

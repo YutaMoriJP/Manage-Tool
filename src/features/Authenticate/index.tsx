@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "../../../reduxApp/hooks";
+import { useDispatch, useSelector } from "../../../app/hooks";
 import { authenticate } from "../../../features/auth/auth.slice";
 import styled, { css } from "styled-components";
 import Button from "../../../styled/StyledButton";

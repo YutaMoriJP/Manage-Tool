@@ -8,7 +8,7 @@
       "@/styles/*": ["styles/*"],
       "@/store/*": ["store/*"],
       "@/typings/*": ["typings/*"],
-      "@/features/*": ["src/features/*res/*"],
+      "@/features/*": ["src/features/*"],
       "@/app/*": ["reduxApp/*"],
       "@/server/*": ["server/*"],
       "@/data/*": ["data/*"]
